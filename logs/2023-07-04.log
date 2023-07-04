@@ -1,0 +1,63 @@
+[INFO]2023-07-04 15:37:20,797 - Starting TourServiceApplication using Java 1.8.0_51 on DESKTOP-MQS6FMF with PID 12212 (C:\Users\20147\Desktop\tourService\target\classes started by 20147 in C:\Users\20147\Desktop\tourService)
+[INFO]2023-07-04 15:37:20,798 - No active profile set, falling back to 1 default profile: "default"
+[INFO]2023-07-04 15:37:20,832 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO]2023-07-04 15:37:20,832 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO]2023-07-04 15:37:21,399 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]2023-07-04 15:37:21,422 - Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+[INFO]2023-07-04 15:37:22,023 - Tomcat initialized with port(s): 8080 (http)
+[INFO]2023-07-04 15:37:22,029 - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO]2023-07-04 15:37:22,031 - Starting service [Tomcat]
+[INFO]2023-07-04 15:37:22,031 - Starting Servlet engine: [Apache Tomcat/9.0.76]
+[INFO]2023-07-04 15:37:22,151 - Initializing Spring embedded WebApplicationContext
+[INFO]2023-07-04 15:37:22,151 - Root WebApplicationContext: initialization completed in 1318 ms
+[INFO]2023-07-04 15:37:22,271 - HikariPool-1 - Starting...
+[INFO]2023-07-04 15:37:22,936 - HikariPool-1 - Start completed.
+[INFO]2023-07-04 15:37:23,034 - HHH000412: Hibernate ORM core version 5.6.15.Final
+[INFO]2023-07-04 15:37:23,198 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO]2023-07-04 15:37:23,312 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[INFO]2023-07-04 15:37:23,445 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO]2023-07-04 15:37:23,457 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN]2023-07-04 15:37:23,712 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hotelController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hotelService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sx.tourService.dao.HotelDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+[INFO]2023-07-04 15:37:23,712 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]2023-07-04 15:37:23,715 - HikariPool-1 - Shutdown initiated...
+[INFO]2023-07-04 15:37:23,842 - HikariPool-1 - Shutdown completed.
+[INFO]2023-07-04 15:37:23,843 - Stopping service [Tomcat]
+[ERROR]2023-07-04 15:37:23,904 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.sx.tourService.dao.HotelDao' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sx.tourService.dao.HotelDao' in your configuration.
+
+[INFO]2023-07-04 15:38:10,787 - Starting TourServiceApplication using Java 1.8.0_51 on DESKTOP-MQS6FMF with PID 12596 (C:\Users\20147\Desktop\tourService\target\classes started by 20147 in C:\Users\20147\Desktop\tourService)
+[INFO]2023-07-04 15:38:10,788 - No active profile set, falling back to 1 default profile: "default"
+[INFO]2023-07-04 15:38:10,820 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO]2023-07-04 15:38:10,820 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO]2023-07-04 15:38:11,319 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]2023-07-04 15:38:11,341 - Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+[INFO]2023-07-04 15:38:11,886 - Tomcat initialized with port(s): 8080 (http)
+[INFO]2023-07-04 15:38:11,891 - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO]2023-07-04 15:38:11,892 - Starting service [Tomcat]
+[INFO]2023-07-04 15:38:11,892 - Starting Servlet engine: [Apache Tomcat/9.0.76]
+[INFO]2023-07-04 15:38:12,003 - Initializing Spring embedded WebApplicationContext
+[INFO]2023-07-04 15:38:12,003 - Root WebApplicationContext: initialization completed in 1183 ms
+[INFO]2023-07-04 15:38:12,108 - HikariPool-1 - Starting...
+[INFO]2023-07-04 15:38:12,686 - HikariPool-1 - Start completed.
+[INFO]2023-07-04 15:38:12,755 - HHH000412: Hibernate ORM core version 5.6.15.Final
+[INFO]2023-07-04 15:38:12,852 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO]2023-07-04 15:38:12,942 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[INFO]2023-07-04 15:38:13,048 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO]2023-07-04 15:38:13,056 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN]2023-07-04 15:38:13,332 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]2023-07-04 15:38:13,667 - LiveReload server is running on port 35729
+[INFO]2023-07-04 15:38:13,681 - Starting ProtocolHandler ["http-nio-8080"]
+[INFO]2023-07-04 15:38:13,698 - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO]2023-07-04 15:38:13,714 - Started TourServiceApplication in 3.263 seconds (JVM running for 4.52)
