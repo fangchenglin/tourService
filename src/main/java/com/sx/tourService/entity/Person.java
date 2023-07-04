@@ -6,16 +6,16 @@ import java.io.Serializable;
  * (Person)实体类
  *
  * @author makejava
- * @since 2023-07-04 15:26:21
+ * @since 2023-07-04 17:12:20
  */
 public class Person implements Serializable {
-    private static final long serialVersionUID = -60759861843051341L;
+    private static final long serialVersionUID = 635667863446439086L;
     
     private Integer pId;
     
     private String pName;
     /**
-     * 0：未登录用户  1：游客  2：审批  3：管理 
+     * 0：未登录用户  1：游客  2：处理  3：管理  4：审批 5：酒店
      */
     private Integer pPower;
     
