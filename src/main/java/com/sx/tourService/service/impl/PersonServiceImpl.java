@@ -14,6 +14,7 @@ import org.springframework.data.domain.PageRequest;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * (Person)表服务实现类
@@ -100,5 +101,24 @@ public class PersonServiceImpl implements PersonService {
         session.setAttribute("user",person);
         session.setMaxInactiveInterval(60 * 60 * 24);
         return DataResult.successByData(person);
+    public DataResult loginUser(Person person){
+        //判断参数
+        if(VerifyUtil.isNull(person.getPPhone()) || VerifyUtil.isNull(person.getPassword())){
+            return DataResult.errByErrCode(Code.LOGIN_ERROR);
+        }
+        //查询用户
+        Person loginUser = personDao.loginUser(person);
+        if(loginUser == null){
+            return DataResult.errByErrCode(Code.NO_EXIST);
+        }
+        //登陆成功
+        loginUser.setPassword("");
+        //将用户信息存入session
+        session.setAttribute("person",loginUser);
+        session.setMaxInactiveInterval(60 * 60 * 24);
+        //查询当前用户可以看到的菜单
+
+        //整理返回数据
+        return DataResult.successByData(loginUser);
     }
 }
