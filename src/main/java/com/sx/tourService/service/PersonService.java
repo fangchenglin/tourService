@@ -1,6 +1,7 @@
 package com.sx.tourService.service;
 
 import com.sx.tourService.entity.Person;
+import com.sx.tourService.utils.result.DataResult;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
@@ -53,4 +54,5 @@ public interface PersonService {
      */
     boolean deleteById(Integer pId);
 
+    DataResult register(Person person);
 }

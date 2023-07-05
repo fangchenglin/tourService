@@ -3,12 +3,17 @@ package com.sx.tourService.service.impl;
 import com.sx.tourService.entity.Person;
 import com.sx.tourService.dao.PersonDao;
 import com.sx.tourService.service.PersonService;
+import com.sx.tourService.utils.VerifyUtil;
+import com.sx.tourService.utils.result.DataResult;
+import com.sx.tourService.utils.result.code.Code;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 /**
  * (Person)表服务实现类
@@ -20,6 +25,9 @@ import javax.annotation.Resource;
 public class PersonServiceImpl implements PersonService {
     @Resource
     private PersonDao personDao;
+
+    @Resource
+    HttpSession session;
 
     /**
      * 通过ID查询单条数据
@@ -78,5 +86,19 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public boolean deleteById(Integer pId) {
         return this.personDao.deleteById(pId) > 0;
+    }
+
+    @Override
+    public DataResult register(Person person) {
+
+        Person registerPerson = personDao.register(person);
+        if(registerPerson!= null){
+            return DataResult.errByErrCode(Code.REGISTER_ERROR);
+
+        }
+        int insert_person=personDao.insert(person);
+        session.setAttribute("user",person);
+        session.setMaxInactiveInterval(60 * 60 * 24);
+        return DataResult.successByData(person);
     }
 }
