@@ -24,8 +24,9 @@ public class AroundCut {
     public static final String POINT_CUT = "execution(* com.sx.tourService.controller.EmergeMsgController.*(..)) || " +
             "execution(* com.sx.tourService.controller.HotelController.*(..)) || " +
             "execution(* com.sx.tourService.controller.PersonController.*(..)) || " +
-            "execution(* com.sx.tourService.controller.RoomController.*(..))"+
-            "execution(* com.sx.tourService.controller.SuitController.*(..))";
+            "execution(* com.sx.tourService.controller.RoomController.*(..))||"+
+            "execution(* com.sx.tourService.controller.SuitController.*(..))||"+
+            "execution(* com.sx.tourService.controller.LoginController.*(..))||";
 
 
 
