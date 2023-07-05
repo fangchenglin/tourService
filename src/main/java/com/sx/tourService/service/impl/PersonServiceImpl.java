@@ -3,12 +3,17 @@ package com.sx.tourService.service.impl;
 import com.sx.tourService.entity.Person;
 import com.sx.tourService.dao.PersonDao;
 import com.sx.tourService.service.PersonService;
+import com.sx.tourService.utils.VerifyUtil;
+import com.sx.tourService.utils.result.DataResult;
+import com.sx.tourService.utils.result.code.Code;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * (Person)表服务实现类
@@ -20,6 +25,9 @@ import javax.annotation.Resource;
 public class PersonServiceImpl implements PersonService {
     @Resource
     private PersonDao personDao;
+
+    @Resource
+    HttpSession session;
 
     /**
      * 通过ID查询单条数据
@@ -78,5 +86,27 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public boolean deleteById(Integer pId) {
         return this.personDao.deleteById(pId) > 0;
+    }
+
+    @Override
+    public DataResult loginUser(Person person){
+        //判断参数
+        if(VerifyUtil.isNull(person.getPPhone()) || VerifyUtil.isNull(person.getPassword())){
+            return DataResult.errByErrCode(Code.LOGIN_ERROR);
+        }
+        //查询用户
+        Person loginUser = personDao.loginUser(person);
+        if(loginUser == null){
+            return DataResult.errByErrCode(Code.NO_EXIST);
+        }
+        //登陆成功
+        loginUser.setPassword("");
+        //将用户信息存入session
+        session.setAttribute("person",loginUser);
+        session.setMaxInactiveInterval(60 * 60 * 24);
+        //查询当前用户可以看到的菜单
+
+        //整理返回数据
+        return DataResult.successByData(loginUser);
     }
 }

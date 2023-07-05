@@ -81,5 +81,6 @@ public interface PersonDao {
      */
     int deleteById(Integer pId);
 
+    Person loginUser(Person person);
 }
 

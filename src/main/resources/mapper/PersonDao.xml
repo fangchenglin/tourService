@@ -129,5 +129,13 @@
         delete from person where p_id = #{pId}
     </delete>
 
+    <!--用户登录-->
+    <select id="loginUser" resultMap="PersonMap">
+        select * from person
+        <where>
+            p_phone = #{pPhone} and password = #{password}
+        </where>
+    </select>
+
 </mapper>
 
