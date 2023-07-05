@@ -135,6 +135,11 @@
         <where>
             p_phone = #{pPhone}
 
+    <!--用户登录-->
+    <select id="loginUser" resultMap="PersonMap">
+        select * from person
+        <where>
+            p_phone = #{pPhone} and password = #{password}
         </where>
     </select>
 
