@@ -6,6 +6,7 @@ import com.sx.tourService.service.PersonService;
 import com.sx.tourService.utils.VerifyUtil;
 import com.sx.tourService.utils.result.DataResult;
 import com.sx.tourService.utils.result.code.Code;
+
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -89,6 +90,17 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
+    public DataResult register(Person person) {
+
+        Person registerPerson = personDao.register(person);
+        if(registerPerson!= null){
+            return DataResult.errByErrCode(Code.REGISTER_ERROR);
+
+        }
+        int insert_person=personDao.insert(person);
+        session.setAttribute("user",person);
+        session.setMaxInactiveInterval(60 * 60 * 24);
+        return DataResult.successByData(person);
     public DataResult loginUser(Person person){
         //判断参数
         if(VerifyUtil.isNull(person.getPPhone()) || VerifyUtil.isNull(person.getPassword())){

@@ -54,5 +54,6 @@ public interface PersonService {
      */
     boolean deleteById(Integer pId);
 
+    DataResult register(Person person);
     DataResult loginUser(Person person);
 }

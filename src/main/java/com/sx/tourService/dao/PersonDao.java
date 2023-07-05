@@ -80,7 +80,7 @@ public interface PersonDao {
      * @return 影响行数
      */
     int deleteById(Integer pId);
-
+    Person register(Person person);
     Person loginUser(Person person);
 }
 

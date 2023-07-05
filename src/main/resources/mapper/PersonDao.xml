@@ -129,6 +129,12 @@
         delete from person where p_id = #{pId}
     </delete>
 
+    <!--用户注册-->
+    <select id="register" resultMap="PersonMap">
+        select * from Person
+        <where>
+            p_phone = #{pPhone}
+
     <!--用户登录-->
     <select id="loginUser" resultMap="PersonMap">
         select * from person
