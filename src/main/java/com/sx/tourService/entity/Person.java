@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (Person)实体类
  *
  * @author makejava
- * @since 2023-07-04 17:12:20
+ * @since 2023-07-05 10:07:27
  */
 public class Person implements Serializable {
-    private static final long serialVersionUID = 635667863446439086L;
+    private static final long serialVersionUID = -40233458379118358L;
     
     private Integer pId;
     
@@ -22,6 +22,8 @@ public class Person implements Serializable {
     private String pPhone;
     
     private String password;
+    
+    private String birth;
 
 
     public Integer getPId() {
@@ -62,6 +64,14 @@ public class Person implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 
 }
